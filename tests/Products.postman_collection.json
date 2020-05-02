@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "e85f313a-fb32-460e-bd3d-72a3f3885bfc",
+		"name": "Products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/Assignment1/products/product/read.php",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "52d875c4-9618-4315-929e-fe8726e56d8e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('environment to be production', function () {\r",
+							"      pm.expect(pm.environment.get('env')).to.equal();\r",
+							"  });\r",
+							"\r",
+							"pm.test(\"Your Cokkie name\", function () {\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.expect(pm.cookies.has('username')).to.be.true;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/Assignment1/products/product/read.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Assignment1",
+						"products",
+						"product",
+						"read.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/Assignment1/products/product/delete.php",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "52d875c4-9618-4315-929e-fe8726e56d8e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('environment to be production', function () {\r",
+							"      pm.expect(pm.environment.get('env')).to.equal();\r",
+							"  });\r",
+							"\r",
+							"pm.test(\"Your Cokkie name\", function () {\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.expect(pm.cookies.has('username')).to.be.true;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Product Delete is correct\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('Product was deleted.');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productid\" : \"3\"   \r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "http://localhost/Assignment1/products/product/delete.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Assignment1",
+						"products",
+						"product",
+						"delete.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/Assignment1/products/product/create.php",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0ed98446-80e1-4321-928d-84c5b4c96a94",
+						"exec": [
+							"\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);\r",
+							"});\r",
+							"pm.test('environment to be production', function () {\r",
+							"      pm.expect(pm.environment.get('env')).to.equal();\r",
+							"  });\r",
+							"\r",
+							"pm.test(\"Your Cokkie name\", function () {\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.expect(pm.cookies.has('PHPSESSID')).to.be.true;\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Product insert is correct\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('Product was created.');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productDetail\" : \"Amzing Pillo\",\r\n    \"productImage\" : \"Not Availbe\",\r\n    \"pricing\" : 12,\r\n    \"shipping_cost\" : 4\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost/Assignment1/products/product/create.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Assignment1",
+						"products",
+						"product",
+						"create.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/Assignment1/products/product/update.php",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "86322c19-0b1a-404a-9104-a9321276d67b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('environment to be production', function () {\r",
+							"      pm.expect(pm.environment.get('env')).to.equal();\r",
+							"  });\r",
+							"\r",
+							"pm.test(\"Your Cokkie name\", function () {\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.expect(pm.cookies.has('PHPSESSID')).to.be.true;\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Product update is correct\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('Product was updated.');\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productid\" : \"2\",\r\n    \"productDetail\" : \"Amzing Pillow 3.0\",\r\n    \"productImage\" : \"Availbe\",\r\n    \"pricing\" : \"12\",\r\n    \"shipping_cost\" : \"4\"\r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost/Assignment1/products/product/update.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Assignment1",
+						"products",
+						"product",
+						"update.php"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

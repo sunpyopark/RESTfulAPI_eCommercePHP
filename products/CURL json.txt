@@ -1,0 +1,24 @@
+﻿<INSERT>
+{
+    "productDetail" : "Amzing Pillow 3.0",
+    "productImage" : "Not Availbe",
+    "pricing" : 12,
+    "shipping_cost" : 4
+
+}
+
+<UPDATE>
+{
+    "productid" : "2",
+    "productDetail" : "Amzing Pillow 3.0",
+    "productImage" : "Not Availbe",
+    "pricing" : "12",
+    "shipping_cost" : "4"
+
+}
+
+<DELETE>
+{
+    "productid" : "2"   
+}
+

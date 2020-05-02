@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "6a0cfb9d-57b8-4ac8-9e36-b7cc5ad9fe03",
+		"name": "user",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/Assignment1/users/user/delete.php/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9dafab19-f280-4a8e-a37b-c56245673034",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('environment to be production', function () {\r",
+							"      pm.expect(pm.environment.get('env')).to.equal();\r",
+							"  });\r",
+							"\r",
+							"pm.test(\"Your Cokkie name\", function () {\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.expect(pm.cookies.has('PHPSESSID')).to.be.true;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Product Delete is correct\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('Product was deleted.');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\" : \"4\"   \r\n}"
+				},
+				"url": {
+					"raw": "http://localhost/Assignment1/users/user/delete.php/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Assignment1",
+						"users",
+						"user",
+						"delete.php",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/Assignment1/users/user/read.php/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d3b89f7-a1bb-4e42-8d7f-882df7a3b82a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('environment to be production', function () {\r",
+							"      pm.expect(pm.environment.get('env')).to.equal();\r",
+							"  });\r",
+							"\r",
+							"pm.test(\"Your Cokkie name\", function () {\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.expect(pm.cookies.has('PHPSESSID')).to.be.true;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/Assignment1/users/user/read.php/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Assignment1",
+						"users",
+						"user",
+						"read.php",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/Assignment1/users/user/update.php/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "37ac79ce-dc57-4bdd-bd80-28bc2e4afc4c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('environment to be production', function () {\r",
+							"      pm.expect(pm.environment.get('env')).to.equal();\r",
+							"  });\r",
+							"\r",
+							"pm.test(\"Your Cokkie name\", function () {\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.expect(pm.cookies.has('PHPSESSID')).to.be.true;\r",
+							"});\r",
+							"pm.test(\"Product update is correct\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('Product was updated.');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\" : \"4\",\r\n    \"email\" : \"Amazing Pillow 3.0\",\r\n    \"password\" : \"7\",\r\n    \"username\" : \"Steven Park\",\r\n    \"purchase_history\" : \"two\",\r\n    \"shipping_address\" : \"shipping_address\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost/Assignment1/users/user/update.php/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Assignment1",
+						"users",
+						"user",
+						"update.php",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/Assignment1/users/user/create.php/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "892833d5-bd83-49ca-9029-459fea9730ba",
+						"exec": [
+							"\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);\r",
+							"});\r",
+							"pm.test('environment to be production', function () {\r",
+							"      pm.expect(pm.environment.get('env')).to.equal();\r",
+							"  });\r",
+							"\r",
+							"pm.test(\"Your Cokkie name\", function () {\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.expect(pm.cookies.has('PHPSESSID')).to.be.true;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Product creation is correct\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('Product was created.');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"Amaz@gmail.com\",\r\n    \"password\" : \"edsd22\",\r\n    \"username\" : \"Park\",\r\n    \"purchase_history\" : \"two\",\r\n    \"shipping_address\" : \"ssds\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost/Assignment1/users/user/create.php/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Assignment1",
+						"users",
+						"user",
+						"create.php",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

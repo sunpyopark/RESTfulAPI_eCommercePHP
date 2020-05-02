@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "5e212117-2dfc-44f7-a1cf-4c98784078af",
+		"name": "comments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/Assignment1/comments/comments/create.php/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a40288da-cf0e-4945-a9af-2a12d024e274",
+						"exec": [
+							"\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test('environment to be production', function () {\r",
+							"      pm.expect(pm.environment.get('env')).to.equal();\r",
+							"  });\r",
+							"\r",
+							"pm.test(\"Your Cookie name\", function () {\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.expect(pm.cookies.has('PHPSESSID')).to.be.true;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Product creation is correct\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('Product was created.');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product\" : \"Amazing\",\r\n    \"user\" : \"Sukhchain Kharoud\",\r\n    \"rating\" : \"8 out 10\",\r\n    \"images\" : \"no\",\r\n    \"text\" : \"this is good\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost/Assignment1/comments/comments/create.php/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Assignment1",
+						"comments",
+						"comments",
+						"create.php",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/Assignment1/comments/comments/delete.php/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c55ec159-5646-479e-b27a-dfde910dc0de",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('environment to be production', function () {\r",
+							"      pm.expect(pm.environment.get('env')).to.equal();\r",
+							"  });\r",
+							"\r",
+							"pm.test(\"Your Cookie name\", function () {\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.expect(pm.cookies.has('PHPSESSID')).to.be.true;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Product Delete is correct\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('Product was deleted.');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commentid\" : \"1\"   \r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost/Assignment1/comments/comments/delete.php/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Assignment1",
+						"comments",
+						"comments",
+						"delete.php",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/Assignment1/comments/comments/update.php/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "db29af17-91c9-4984-804b-3cc29e574a8b",
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test('environment to be production', function () {\r",
+							"      pm.expect(pm.environment.get('env')).to.equal();\r",
+							"  });\r",
+							"\r",
+							"pm.test(\"Your Cokkie name\", function () {\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.expect(pm.cookies.has('PHPSESSID')).to.be.true;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Product update is correct\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('Product was updated.');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n    \"commentid\" : \"2\",\r\n    \"product\" : \"Amazing\",\r\n    \"user\" : \"Sukhchain Kharoud\",\r\n    \"rating\" : \"7 out 10\",\r\n    \"images\" : \"no\",\r\n    \"text\" : \"this is average\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost/Assignment1/comments/comments/update.php/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Assignment1",
+						"comments",
+						"comments",
+						"update.php",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/Assignment1/comments/comments/read.php/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d6662ca3-5bb3-4b96-8162-042616397cbd",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('environment to be production', function () {\r",
+							"      pm.expect(pm.environment.get('env')).to.equal();\r",
+							"  });\r",
+							"\r",
+							"pm.test(\"Your Cokkie name\", function () {\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.expect(pm.cookies.has('PHPSESSID')).to.be.true;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/Assignment1/comments/comments/read.php/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Assignment1",
+						"comments",
+						"comments",
+						"read.php",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

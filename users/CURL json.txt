@@ -1,0 +1,23 @@
+<INSERT>
+{
+    "email" : "Amaz@gmail.com",
+    "password" : "edsd22",
+    "username" : "Park",
+    "purchase_history" : "two",
+    "shipping_address" : "ssds"
+}
+
+<UPDATE>
+{
+    "userid" : "4",
+    "email" : "Amazing Pillow 3.0",
+    "password" : "7",
+    "username" : "Steven Park",
+    "purchase_history" : "two",
+    "shipping_address" : "shipping_address"
+}
+
+<DELETE>
+{
+    "userid" : "4"   
+}

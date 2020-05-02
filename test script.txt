@@ -1,0 +1,25 @@
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test('environment to be production', function () {
+      pm.expect(pm.environment.get('env')).to.equal();
+  });
+
+pm.test("Your Cokkie name", function () {
+var jsonData = pm.response.json();
+pm.expect(pm.cookies.has('PHPSESSID')).to.be.true;
+});
+
+pm.test("Product Delete is correct", function () {
+    pm.expect(pm.response.text()).to.include('Product was deleted.');
+});
+
+pm.test("Product update is correct", function () {
+    pm.expect(pm.response.text()).to.include('Product was updated.');
+});
+
+pm.test("Product insert is correct", function () {
+    pm.expect(pm.response.text()).to.include('Product was created.');
+});
+

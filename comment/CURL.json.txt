@@ -1,0 +1,25 @@
+<INSERT>
+{
+    "product" : "Amazing",
+    "user" : "Sukhchain Kharoud",
+    "rating" : "8 out 10",
+    "images" : "no",
+    "text" : "this is good"
+}
+
+
+<UPDATE>
+{  
+    "commentid" : "2",
+    "product" : "Amazing",
+    "user" : "Sukhchain Kharoud",
+    "rating" : "8 out 10",
+    "images" : "no",
+    "text" : "this is good"
+}
+
+<DELETE>
+{
+    "commentid" : "4"   
+}
+

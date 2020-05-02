@@ -1,0 +1,21 @@
+﻿<INSERT>
+{
+    "products" : "Amazing",
+    "quantities" : 7,
+    "user" : "Sukhchain Kharoud"
+}
+
+
+<UPDATE>
+{
+    "cartid" : "4",
+    "products" : "Amazing Pillow 3.0",
+    "quantities" : "7",
+    "user" : "Steven Park"
+}
+
+<DELETE>
+{
+    "cartid" : "4"   
+}
+
